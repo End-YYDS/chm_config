@@ -10,7 +10,7 @@ pub struct Config {
 
 #[allow(dead_code)]
 impl Config {
-    fn new(
+    pub fn new(
         hostname: String,
         path: String,
         password: String,
