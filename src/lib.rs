@@ -1,11 +1,11 @@
 use serde::{Deserialize, Serialize};
 #[derive(Debug, Serialize, Deserialize)]
-struct Config {
-    hostname: String,
-    path: String,
-    password: String,
-    kind: String,
-    tools: Vec<String>,
+pub struct Config {
+    pub hostname: String,
+    pub path: String,
+    pub password: String,
+    pub kind: String,
+    pub tools: Vec<String>,
 }
 
 #[allow(dead_code)]
