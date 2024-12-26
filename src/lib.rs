@@ -32,7 +32,7 @@ impl Config {
     }
 }
 #[allow(dead_code)]
-fn encrypt_password(password: &str, key: &[u8]) -> String {
+pub fn encrypt_password(password: &str, key: &[u8]) -> String {
     let cipher = Aes256::new(GenericArray::from_slice(key));
     let mut block: GenericArray<u8, U16> = GenericArray::clone_from_slice(&[0u8; 16]);
     let pos = password.len();
@@ -44,7 +44,7 @@ fn encrypt_password(password: &str, key: &[u8]) -> String {
     encode(encrypted_block)
 }
 #[allow(dead_code)]
-fn decrypt_password(encrypted_password: &str, key: &[u8]) -> String {
+pub fn decrypt_password(encrypted_password: &str, key: &[u8]) -> String {
     let cipher = Aes256::new(GenericArray::from_slice(key));
     let encrypted_bytes = decode(encrypted_password).expect("Decoding failed");
 
